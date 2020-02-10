@@ -1,0 +1,51 @@
+
+public class Dawa {
+	private String brandName;
+	private double retailPrice;
+	private int quantity;
+
+	public Dawa() {
+		this("Voltaren", 12.65, 10);
+	}
+
+	public Dawa(String brandName, double retailPrice, int quantity) {
+		this.brandName = brandName;
+		this.retailPrice = retailPrice;
+		this.quantity = quantity;
+	}
+
+	public String getBrandName() {
+		return brandName;
+	}
+
+	public double getRetailPrice() {
+		return retailPrice;
+	}
+
+	public int getQuantity() {
+		return quantity;
+	}
+
+	public void setBrandName(String brandName) {
+		this.brandName = brandName;
+	}
+
+	public void setRetailPrice(double retailPrice) {
+		this.retailPrice = retailPrice;
+	}
+
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
+
+	public double calcTotalPrice() {
+		double totalPrice = retailPrice * quantity;
+		return totalPrice;
+	}
+
+	public double discountedPrice(double discount) {
+		double discPrice = retailPrice * quantity * discount * 0.01;
+		return discPrice;
+	}
+
+}

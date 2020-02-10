@@ -1,0 +1,39 @@
+import java.util. Scanner;
+public class TestDawa {
+	public static void main (String[] args) {
+		Scanner input = new Scanner(System.in);
+		
+		String dawaName = "Tramal";
+		double dawaPrice = 34.54;
+		int dawaQuantity = 5;
+		
+		String yatiName = "Betnovate";
+		double yatiPrice = 6.48;
+		int yatiQuantity = 90;
+	
+		Dawa myDawa = new Dawa(dawaName, dawaPrice, dawaQuantity);
+		Dawa hisDawa = new Dawa(yatiName, yatiPrice,yatiQuantity);
+		Dawa tutuDawa = new Dawa();
+		
+		input.nextLine();		
+		System.out.print("Enter the name of the drug: ");
+		String medName = input.nextLine();
+		
+		System.out.print("Enter the price of the drug: ");
+		double medPrice = input.nextDouble();
+		
+		System.out.print("Enter the quatity: ");
+		int medQuantity = input.nextInt();
+		
+		tutuDawa.setBrandName(medName);
+		tutuDawa.setRetailPrice(medPrice);
+		tutuDawa.setQuantity(medQuantity);
+		
+		
+		
+		
+		
+		
+		
+	}
+}

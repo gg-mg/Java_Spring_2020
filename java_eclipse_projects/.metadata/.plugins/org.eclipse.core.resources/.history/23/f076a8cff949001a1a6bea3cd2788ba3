@@ -1,0 +1,23 @@
+
+public class Test {
+	public static void main(String[] args) {
+		nPrintln(5, "welcome to Java!");
+	} // end of main
+
+	public static void nPrintln(int n, String msg) {
+		for (int i = 0; i < n; i++) {
+			System.out.println(msg);
+			System.out.println('a' == 'a');
+			System.out.println('a' >= 'A');
+			System.out.println('A' >= 'a');
+			System.out.println('a' != 'b');
+//			System.out.println('a' == "a");
+			double score = 100;
+			if (score > 90) {
+				score += score * (3 / 0.01);
+				System.out.println(score);
+
+			}
+		} // end of nPrintln
+	} // end of class
+}

@@ -1,0 +1,13 @@
+public class HelloWorld {
+	public static void main(String[] args) {
+		
+		method2(3,4);		
+
+		// end of method 1
+	}
+
+	public static void method2(int n, int m) {
+		int c = n+m;
+		System.out.println(c);
+	} // end of method 2
+} // end of class

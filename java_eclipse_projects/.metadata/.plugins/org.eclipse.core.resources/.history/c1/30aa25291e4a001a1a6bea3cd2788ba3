@@ -1,0 +1,79 @@
+
+/**Program header: GeorgeGichukiHw4.java
+ * 
+ * Author: George Gichuki
+ * Class: Java, Monday and Wednesday 11:00am to 13.45pm
+ *   
+ * Brief Program Description:
+ * This is an application program for calculation of the price per square foot of a house
+ * and the tax payable.The variables required are; the total price, the square feet and tax percentage.
+ */
+
+import java.util.Scanner;
+
+public class GeorgeGichukiHw4 {
+
+	public static void main(String[] args) {
+
+		// output some basic info
+		System.out.println("Java, Monday & Wednesday 11:00am to 13.45pm, George Gichuki, Hw4");
+
+		// define the input handler
+		Scanner input = new Scanner(System.in);
+		
+		// the total price and square feet provided by the professor for 2 houses
+		double myHousePrice = 295000.0;
+		double myHouseSqf = 3395.0;
+		double clubHousePrice = 189000.0;
+		double clubHouseSqf = 1675.0;
+		
+		// Creating new objects
+		House myHouse = new House(myHousePrice, myHouseSqf);
+
+		House clubHouse = new House(clubHousePrice, clubHouseSqf);
+
+		House supaHouse = new House();
+
+		// input the total price for the 3rd house
+		System.out.print("Please input the total price for example 1560.45: ");
+		double supaTotalPrice = input.nextDouble();
+
+		// input the total square feet for the 3rd house
+		System.out.print("Please input the total square feet for example 342.2: ");
+		double supaTotalSqf = input.nextDouble();
+
+		// using setter to set the prices for the 3rd house 
+		supaHouse.setTotalPrice(supaTotalPrice);
+		supaHouse.setTotalSquareFeet(supaTotalSqf);
+
+		// input the tax percentage to be used for calculating the house tax for the 3 houses
+		System.out.print("Please input the house tax percentage for example 1.25: ");
+		double taxPercentage = input.nextDouble();
+		
+		// storing the values in local variables
+		double myHousePpsf = myHouse.calcPricePerSqf();
+		double myHousePTax = myHouse.calcPropertyTax(taxPercentage);
+		double clubHousePpsf = clubHouse.calcPricePerSqf();
+		double clubHousePTax = clubHouse.calcPropertyTax(taxPercentage);
+		double supaHousePpsf = supaHouse.calcPricePerSqf();
+		double supaHousePTax = supaHouse.calcPropertyTax(taxPercentage);
+		
+		// formatting output
+		System.out.printf("\nTotal Square Feet house 1:%7.1f\nTotal Price house 1:%10.2f\n",myHouseSqf,myHousePrice);
+				
+		System.out.printf("Average Price per Square Foot house 1:%7.2f\nProperty Tax house 1:%9.2f\n\n",myHousePpsf,myHousePTax);
+		
+		System.out.printf("Total Square Feet house 2:%7.1f\nTotal Price house 2: %10.2f\n",clubHouseSqf,clubHousePrice);
+		
+		System.out.printf("Average Price per Square Foot house 2:%7.2f\nProperty Tax house 2:%9.2f\n\n",clubHousePpsf,clubHousePTax);
+		
+		System.out.printf("Total Square Feet house 2:%7.1f\nTotal Price house 2: %10.2f\n",supaTotalSqf,supaTotalPrice);
+		
+		System.out.printf("Average Price per Square Foot house 2:%7.2f\nProperty Tax house 2:%9.2f\n\n",supaHousePpsf,supaHousePTax);
+
+		
+		// close the scanner
+		input.close();
+	}
+
+}
