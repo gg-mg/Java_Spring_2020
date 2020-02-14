@@ -16,6 +16,7 @@ public class WhiteCell extends Actor
     {
         checkKeyPress();
         checkCollision();
+      
     }
     
     /**
@@ -52,10 +53,12 @@ public class WhiteCell extends Actor
     {
         if (isTouching(Bacteria.class)) 
         {
-            Greenfoot.playSound("slurp.wav");
-            removeTouching(Bacteria.class);
+            Greenfoot.playSound("slurp.wav");            
             Bloodstream bloodstream = (Bloodstream)getWorld();
-            bloodstream.addScore(20);
+            bloodstream.addScore(20);           
+            bloodstream.setNumberOfBacteriaTouched(bloodstream.getNumberOfBacteriaTouched()+1);        
+            removeTouching(Bacteria.class);
+            
         }
 
         if (isTouching(Virus.class)) 

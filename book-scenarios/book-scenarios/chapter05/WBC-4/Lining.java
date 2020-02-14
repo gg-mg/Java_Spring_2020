@@ -17,7 +17,12 @@ public class Lining extends Actor
         
         if (getX() == 0) 
         {
-            getWorld().removeObject(this);
+            World myWorld = this.getWorld();
+            myWorld.removeObject(this); //This 
+            this.move(1);//this cannot work because object has been removed.
+            //Which class does getWorld belong to? It belongs to the act class.
+            //Which class does getWorld belong to? removeObject belongs to the World class
+            //getWorld().removeObject(this);This is the same as the first two lines combined.
         }
     }    
 }

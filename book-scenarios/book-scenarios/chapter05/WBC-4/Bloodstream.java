@@ -11,6 +11,10 @@ public class Bloodstream extends World
 {
     private int score;
     private int time;
+    private int numberOfBacteriaTouched;
+    private int numberOfBacteriaMissed;
+    private int numberOfVirusTouched;
+    private int numberOfVirusMissed; 
     
     /**
      * Constructor: Set up the starting objects.
@@ -24,8 +28,36 @@ public class Bloodstream extends World
         time = 2000;
         showScore();
         showTime();
+        numberOfBacteriaTouched = 0;
+        numberOfBacteriaMissed = 0;
+        numberOfVirusTouched = 0;
+        numberOfVirusMissed = 0;
+        
     }
-
+    public int getNumberOfBacteriaTouched(){
+        return numberOfBacteriaTouched;
+    }
+    public int getNumberOfBacteriaMissed(){
+        return numberOfBacteriaMissed;
+    }
+    public int getNumberOfVirusTouched(){
+        return numberOfVirusTouched;
+    }
+    public int getNumberOfVirusMissed(){
+        return numberOfVirusMissed;
+    }
+    public void setNumberOfBacteriaTouched(int numberOfBacteriaTouched){
+       this.numberOfBacteriaTouched = numberOfBacteriaTouched;
+    }
+    public void setNumberOfBacteriaMissed(int numberOfBacteriaMissed){
+        this.numberOfBacteriaMissed = numberOfBacteriaMissed;
+    }
+    public void setNumberOfVirusTouched(int numberOfVirusTouched){
+        this.numberOfVirusTouched = numberOfVirusTouched;
+    }
+    public void setNumberOfVirusMissed(int numberOfVirusMissed){
+        this.numberOfVirusMissed = numberOfVirusMissed;
+    }
     /**
      * Create new floating objects at irregular intervals.
      */
@@ -72,15 +104,20 @@ public class Bloodstream extends World
             Greenfoot.stop();
         }
     }
-    
+     
     /**
      * Show our current score on screen.
      */
     private void showScore()
     {
         showText("Score: " + score, 80, 25);
+        showText("Bacteria Touched: " + score, 600, 260);
+        showText("Bacteria Missed: " + score, 600, 280);
+        showText("Virus Touched: " + score, 600, 300);
+        showText("Virus Missed: " + score, 600, 320);
     }
-
+   
+    
     /**
      * Count down the game time and display it. Stop the game 
      * with a winning message when time is up.
