@@ -28,10 +28,14 @@ public class Bloodstream extends World
         time = 2000;
         showScore();
         showTime();
-        numberOfBacteriaTouched = 0;
-        numberOfBacteriaMissed = 0;
-        numberOfVirusTouched = 0;
-        numberOfVirusMissed = 0;
+        whiteCatchCount();
+        whiteMissedCount();
+        virusCatchCount();
+        virusMissedCount();
+        this.numberOfBacteriaTouched= 0;
+        this.numberOfBacteriaMissed = 0;
+        this.numberOfVirusTouched = 0;
+        this.numberOfVirusMissed = 0;
         
     }
     public int getNumberOfBacteriaTouched(){
@@ -88,6 +92,11 @@ public class Bloodstream extends World
             addObject(new RedCell(), 779, Greenfoot.getRandomNumber(360));
         }
         countTime();
+        whiteCatchCount();
+        whiteMissedCount();
+        virusCatchCount();
+        virusMissedCount();
+      
     }
     
     /**
@@ -96,28 +105,47 @@ public class Bloodstream extends World
      */
     public void addScore(int points)
     {
-        score = score + points;
+        score = score + points;        
         showScore();
+        whiteCatchCount();
+        whiteMissedCount();
+        virusCatchCount();
+        virusMissedCount();
         if (score < 0) 
         {
             Greenfoot.playSound("game-over.wav");
             Greenfoot.stop();
         }
     }
-     
+          
+    private void whiteCatchCount()
+    {
+       showText("Bacteria Touched: " + getNumberOfBacteriaTouched(), 100, 260);
+    } 
+    
+    private void whiteMissedCount()
+    {
+       showText("Bacteria Missed: " + getNumberOfBacteriaMissed(), 100, 280);
+    }
+    
+    private void virusCatchCount()
+    {
+       showText("Virus Touched: " + getNumberOfVirusTouched(), 100, 300);
+    }
+    
+    private void virusMissedCount()
+    {
+       showText("Virus Missed: " + getNumberOfVirusMissed(), 100, 320);
+    }
+    
     /**
      * Show our current score on screen.
      */
     private void showScore()
     {
-        showText("Score: " + score, 80, 25);
-        showText("Bacteria Touched: " + score, 600, 260);
-        showText("Bacteria Missed: " + score, 600, 280);
-        showText("Virus Touched: " + score, 600, 300);
-        showText("Virus Missed: " + score, 600, 320);
+        showText("Score: " + score, 80, 25);            
     }
-   
-    
+       
     /**
      * Count down the game time and display it. Stop the game 
      * with a winning message when time is up.

@@ -15,12 +15,19 @@ public class Virus extends Actor
      */
     public void act() 
     {
+           
         setLocation(getX()-8, getY());
         turn(-1);
         
         if (getX() == 0) 
         {
-            getWorld().removeObject(this);
+           Bloodstream bloodstream = (Bloodstream)getWorld(); 
+           bloodstream.addScore(+2); 
+           bloodstream.setNumberOfVirusMissed(bloodstream.getNumberOfVirusMissed()+1);
+           getWorld().removeObject(this);
+           
         }
+       
+            
     }    
 }

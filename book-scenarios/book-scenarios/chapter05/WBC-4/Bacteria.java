@@ -24,15 +24,23 @@ public class Bacteria extends Actor
      */
     public void act() 
     {
+        
+        
         setLocation(getX()-speed, getY());
         turn(1);
         
         if (getX() == 0) 
         {
             Bloodstream bloodstream = (Bloodstream)getWorld();
-            bloodstream.addScore(-15);
+            bloodstream.addScore(-1);
+            bloodstream.setNumberOfBacteriaMissed(bloodstream.getNumberOfBacteriaMissed()+1); 
             bloodstream.removeObject(this);
+            
         }
+       
     }
+     
+      
+        
     
 }
