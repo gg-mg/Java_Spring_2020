@@ -18,22 +18,41 @@ public class GeorgeGichukiHw6 {
 		double[] myDoubleArray = new double[10];
 
 		for (int i = 0; i < 10; i++) {
-			myDoubleArray[i] = (int) (Math.random() * 100);
-			System.out.println(myDoubleArray[i]);
+			myDoubleArray[i] = (double) (Math.random() * 100);
+
 		}
-//		System.out.println("Numbers Generated: " + Arrays.toString(myDoubleArray));
 		printArray(myDoubleArray);
+		System.out.println(".");
+		sort(myDoubleArray);
 	}
 
-	public static void outputArray(double[] list) {
-		for (int i = 0; i < list.length; i++) {
-			System.out.printf("%4d", list[i]);
+	public static void printArray(double[] list) {
+		for (double eachElement : list) {
+			System.out.printf("%4.2f ", eachElement);
 		}
 	}
 
-	public static void printArray(double array[]) {
-		for (int i = 0; i < 10; i++) {
-			System.out.printf("%4d", array[i]);
+	public static void sort(double arr[]) {
+
+		for (int i = 0; i < arr.length; i++) {
+
+			for (int j = i + 1; j < arr.length; j++) {
+
+				if (arr[i] < arr[j]) {
+
+					double temp = arr[i];
+
+					arr[i] = arr[j];
+
+					arr[j] = temp;
+
+				}
+
+			}
+
 		}
+		for (double eachElement : arr)
+			System.out.printf("%4.2f ", eachElement);
 	}
+
 }
