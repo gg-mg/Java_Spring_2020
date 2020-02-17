@@ -22,7 +22,7 @@ public class Virus extends Actor
         if (getX() == 0) 
         {
            Bloodstream bloodstream = (Bloodstream)getWorld(); 
-           bloodstream.addScore(+2); 
+           bloodstream.addScore(2); 
            bloodstream.setNumberOfVirusMissed(bloodstream.getNumberOfVirusMissed()+1);
            getWorld().removeObject(this);
            

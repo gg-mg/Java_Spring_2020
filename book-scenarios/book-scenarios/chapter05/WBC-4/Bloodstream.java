@@ -91,12 +91,8 @@ public class Bloodstream extends World
         {
             addObject(new RedCell(), 779, Greenfoot.getRandomNumber(360));
         }
-        countTime();
-        whiteCatchCount();
-        whiteMissedCount();
-        virusCatchCount();
-        virusMissedCount();
-      
+        countTime();      
+       
     }
     
     /**
