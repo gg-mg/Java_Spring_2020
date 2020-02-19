@@ -46,18 +46,17 @@ public class Block extends Actor
      */
     private void checkMouseClick()
     {
-        if (Greenfoot.mouseClicked(null))
+       
+        //if (Greenfoot.mouseClicked(null))
         //if (Greenfoot.mouseClicked(this))
-        //if (Greenfoot.mouseClicked(getWorld()))
+        if (Greenfoot.mouseClicked(getWorld()))
         {
          World world = getWorld();
-         List<Leaf> leaves = world.getObjects(Leaf.class);
+         List <Leaf>leaves = world.getObjects(Leaf.class);
 
             for (Leaf leaf : leaves)
-            {
-                if (Greenfoot.mouseClicked(leaf)){
-                    leaf.changeImage();
-                }
+            {               
+                    leaf.changeImage();                
             }
         }
     }

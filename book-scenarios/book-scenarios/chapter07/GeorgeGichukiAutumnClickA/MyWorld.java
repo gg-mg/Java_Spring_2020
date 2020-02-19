@@ -24,7 +24,7 @@ public class MyWorld extends World
     private void setUp()
     {
         int i = 0;
-        while (i<128) {
+        while (i<18) {
             int x = Greenfoot.getRandomNumber(getWidth());
             int y = Greenfoot.getRandomNumber(getHeight());
             addObject( new Leaf(), x, y );
