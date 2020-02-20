@@ -1,3 +1,16 @@
+/** Program header: FootballPlayer.java
+ *
+ * Author: George Gichuki
+ * Class:  Monday and Wednesday 11.00 to 13.45
+ *
+ * Brief Program Description:
+ * This is the FootballPlayer class which is a child of the Player class.
+ * A static double is defined followed by two private data elements.
+ * Getter and setters are provided further down after the constructors.
+ * In the second constructor, the super keyword is used to inherit  properties
+ * of the parent class Player. There are two effectors, one for calculating the statistics 
+ * and the second which determines if the player should keep the status or not.    
+ */
 
 public class FootballPlayer extends Player {
 	
@@ -10,7 +23,7 @@ public class FootballPlayer extends Player {
 	}
 	
 	public FootballPlayer(int id, String playerName, String teamName, String position, double salary, 
-			double commissionRate, int numberOfYards, int numberOfRushes){
+		double commissionRate, int numberOfYards, int numberOfRushes){
 		super(id, playerName, teamName, position, salary, commissionRate);
 		this.numberOfYards = numberOfYards;
 		this.numberOfRushes = numberOfRushes;

@@ -1,15 +1,15 @@
-/** Program header:  Player.java
+/** Program header:	Player.java
  *
- * Author:    George Gichuki
- * Class:     Monday and Wednesday 11.00 to 13.45
+ * Author: George Gichuki
+ * Class:  Monday and Wednesday 11.00 to 13.45
  *
  * Brief Program Description:
- *   This is the parent class, the Player class.
- *   The properties defined in this class are passed down to BaseballPlayer.java,
- *   FootballPlayer.java and Basketball.Java. 
- *   Six private data elements are defined with public getters and setters provided as 
- *   routes to access the private data. There two constructors, one default and the other
- *   with 6 parameters. There is one effector for calculating the commission.
+ * This is the parent class, the Player class.
+ * The properties defined in this class are passed down to BaseballPlayer.java,
+ * FootballPlayer.java and Basketball.Java. 
+ * Six private data elements are defined with public getters and setters provided as 
+ * routes to access the private data. There two constructors, one default and the other
+ * with 6 parameters. There is one effector for calculating the commission.
  */
 
 public class Player {
@@ -21,7 +21,7 @@ public class Player {
 	private double commissionRate;
 	
 	public Player() {
-		this(20, "Barry Sanders", "OSU", "running back",1000000.00, 0.02);
+		this(20, "Barry Sanders", "OSU", "running back",1750000.00, 0.02);
 	}
 	
 	public Player(int id, String playerName, String teamName, String position, double salary, 

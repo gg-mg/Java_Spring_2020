@@ -1,7 +1,7 @@
-/** Program header:  GeorgeGichukiHw7.java
+/** Program header: GeorgeGichukiHw7.java
  *
- * Author:    George Gichuki
- * Class:     Monday and Wednesday 11.00 to 13.45
+ * Author: George Gichuki
+ * Class:  Monday and Wednesday 11.00 to 13.45
  *
  * Brief Program Description:
  * This class is the application class that has the main method.

@@ -1,3 +1,2 @@
 INDEX VERSION 1.131+C:\Users\ggich\Java_Spring_2020\java_eclipse_projects\.metadata\.plugins\org.eclipse.jdt.core
-4135888754.index
 1671692264.index
