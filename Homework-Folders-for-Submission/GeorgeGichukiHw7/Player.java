@@ -11,8 +11,9 @@
  * routes to access the private data. There two constructors, one default and the other
  * with 6 parameters. There is one effector for calculating the commission.
  */
-
+//parent class with 6 private data elements
 public class Player {
+	
 	private int id;
 	private String playerName;
 	private String teamName;
@@ -20,6 +21,7 @@ public class Player {
 	private double salary;
 	private double commissionRate;
 	
+	//two constructors: one default and the other with 6 parameters
 	public Player() {
 		this(20, "Barry Sanders", "OSU", "running back",1750000.00, 0.02);
 	}
@@ -32,7 +34,8 @@ public class Player {
 		this.position = position;
 		this.salary = salary;
 		this.commissionRate = commissionRate;
-	}
+	}	
+	//getters
 	public int getId() {
 		return id;
 	}
@@ -54,6 +57,7 @@ public class Player {
 	public void setId(int id) {
 		this.id = id;
 	}
+	//setters
 	public void setPlayerName(String playerName) {
 		this.playerName = playerName;
 	}
@@ -69,6 +73,7 @@ public class Player {
 	public void setCommissionRate(double commissionRate){
 		this.commissionRate = commissionRate;
 	}
+	//effector for calculating the commission
 	public double calcCommission() {
 		double commission = salary * commissionRate;
 		return commission;

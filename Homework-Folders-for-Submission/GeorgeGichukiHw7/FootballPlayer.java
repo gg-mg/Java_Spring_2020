@@ -11,13 +11,14 @@
  * of the parent class Player. There are two effectors, one for calculating the statistics 
  * and the second which determines if the player should keep the status or not.    
  */
-
+//child class with a static element and 2 private data elements
 public class FootballPlayer extends Player {
 	
 	public static final double RUSHING_AVERAGE_TH = 3.5;
 	private int numberOfYards;
 	private int numberOfRushes;
 	
+	//two constructors: one default and the other with 8 parameters
 	public FootballPlayer() {
 		this(20, "Barry Sanders", "OSU", "running back",1750000.00, 0.02,1896, 520);
 	}
@@ -28,24 +29,27 @@ public class FootballPlayer extends Player {
 		this.numberOfYards = numberOfYards;
 		this.numberOfRushes = numberOfRushes;
 	}	
-	
+	//getters
 	public int getNumberOfYards() {
 		return numberOfYards;
 	}
 	public int getNumberOfRushes() {
 		return numberOfRushes;
 	}	
+	//setters
 	public void setNumberOfYards(int numberOfYards) {
 		this.numberOfYards = numberOfYards;
 	}
 	public void setNumberOfRushes(int numberOfRushes) {
 		this.numberOfRushes = numberOfRushes;
 	}
+	//effector for calculating statistics
 	public double calcStatisticsF() {
 		double rushingAverage = (numberOfYards + 0.00) / numberOfRushes;
 		return rushingAverage;
 		
 	}
+	//effector for checking status
 	public boolean determineStatusF() {
 		if (calcStatisticsF() > RUSHING_AVERAGE_TH) {
 			return true;
