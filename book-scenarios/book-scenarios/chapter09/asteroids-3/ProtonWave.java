@@ -71,7 +71,7 @@ public class ProtonWave extends Actor
         
         for (Asteroid a : asteroids) 
         {
-            a.hit (DAMAGE);
+            a.getHit (DAMAGE);
         }
     }
 

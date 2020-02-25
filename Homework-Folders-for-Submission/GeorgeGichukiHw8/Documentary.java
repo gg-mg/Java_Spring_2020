@@ -48,7 +48,6 @@ public class Documentary extends Movie{
 		this.premiumPaid = premiumPaid; 
 	}
 
-	//effectors
 	public String getCategory() { 				
 		return "documentary";
 	}

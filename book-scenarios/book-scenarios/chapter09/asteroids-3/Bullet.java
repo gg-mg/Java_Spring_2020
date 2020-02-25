@@ -49,7 +49,7 @@ public class Bullet extends SmoothMover
         if (asteroid != null) 
         {
             getWorld().removeObject(this);
-            asteroid.hit(damage);
+            asteroid.getHit(damage);
         }
     }
 }

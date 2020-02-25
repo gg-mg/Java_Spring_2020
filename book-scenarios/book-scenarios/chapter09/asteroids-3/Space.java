@@ -9,7 +9,7 @@ import greenfoot.*;
 public class Space extends World
 {
     private Counter scoreCounter;
-    private int startAsteroids = 3;
+    private int startAsteroids = 1;
 
     /**
      * Create the space and all objects within it.
@@ -23,7 +23,7 @@ public class Space extends World
         createStars(300);
         
         Rocket rocket = new Rocket();
-        addObject(rocket, getWidth()/2 + 100, getHeight()/2);
+        addObject(rocket, getWidth() + 100, getHeight()/2);
         
         addAsteroids(startAsteroids);
         
@@ -69,7 +69,13 @@ public class Space extends World
      */
     public void gameOver() 
     {
-        addObject(new ScoreBoard(999), getWidth()/2, getHeight()/2);
+        addObject(new ScoreBoard(scoreCounter.getValue()), getWidth()/2, getHeight()/2);
     }
-
+    
+    public void countScore(int count)
+    {
+     scoreCounter.add(count);
+        
+    }    
+   
 }

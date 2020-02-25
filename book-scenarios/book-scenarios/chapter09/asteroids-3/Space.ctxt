@@ -13,4 +13,6 @@ comment3.text=\r\n\ Crete\ a\ given\ number\ of\ stars\ in\ space.\r\n
 comment4.params=
 comment4.target=void\ gameOver()
 comment4.text=\r\n\ This\ method\ is\ called\ when\ the\ game\ is\ over\ to\ display\ the\ final\ score.\r\n
-numComments=5
+comment5.params=count
+comment5.target=void\ countScore(int)
+numComments=6

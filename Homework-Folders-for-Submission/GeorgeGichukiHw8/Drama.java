@@ -47,8 +47,7 @@ public class Drama extends Movie {
 	public void setAveragePrice(double averagePrice) { 
 		this.averagePrice = averagePrice; 
 	}
-	
-	//effectors
+
 	public String getCategory() { 			
 		return "drama";
 	}

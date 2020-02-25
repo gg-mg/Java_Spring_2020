@@ -70,12 +70,13 @@ public class Asteroid extends SmoothMover
     /**
      * Hit this asteroid dealing the given amount of damage.
      */
-    public void hit(int damage) 
+    public void getHit(int damage) 
     {
         stability = stability - damage;
         if (stability <= 0) 
         {
             breakUp();
+            
         }
     }
     
@@ -83,11 +84,13 @@ public class Asteroid extends SmoothMover
      * Break up this asteroid. If we are still big enough, this will create two
      * smaller asteroids. If we are small already, just disappear.
      */
-    private void breakUp() 
+    private void breakUp()     
     {
         Greenfoot.playSound("Explosion.wav");
-        
-        if (size <= 16) {
+       
+       
+        if (size <= 16) {            
+            ((Space)getWorld()).countScore(5); 
             getWorld().removeObject(this);
         }
         else {
@@ -100,9 +103,10 @@ public class Asteroid extends SmoothMover
             getWorld().addObject(a1, getX(), getY());
             getWorld().addObject(a2, getX(), getY());        
             a1.move();
-            a2.move();
-        
+            a2.move();          
+            ((Space)getWorld()).countScore(1); 
             getWorld().removeObject(this);
+             
         }
     }
 }
