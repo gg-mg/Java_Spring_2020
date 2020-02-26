@@ -9,7 +9,7 @@ import greenfoot.*;
 public class Space extends World
 {
     private Counter scoreCounter;
-    private int startAsteroids = 1;
+    private int startAsteroids = 2;
 
     /**
      * Create the space and all objects within it.
@@ -33,7 +33,9 @@ public class Space extends World
         Explosion.initializeImages();
         ProtonWave.initializeImages();
     }
-    
+        public void levelup(){
+           addAsteroids(++startAsteroids);
+    }
     /**
      * Add a given number of asteroids to our world. Asteroids are only added into
      * the left half of the world.
@@ -45,6 +47,7 @@ public class Space extends World
             int x = Greenfoot.getRandomNumber(getWidth()/2);
             int y = Greenfoot.getRandomNumber(getHeight()/2);
             addObject(new Asteroid(), x, y);
+           
         }
     }
 
@@ -74,8 +77,7 @@ public class Space extends World
     
     public void countScore(int count)
     {
-     scoreCounter.add(count);
+        scoreCounter.add(count);
         
     }    
-   
 }

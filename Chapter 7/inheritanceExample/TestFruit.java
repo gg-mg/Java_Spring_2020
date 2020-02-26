@@ -10,6 +10,7 @@
  *   It demonstrate the use of constructor with all parameters, 
  *      and the use of default constructor and then the use of setters.
  *   Then it calculate and output the fruit characteristics such as farm and price, etc.
+ *   STUDY FOR EXAM .USING INHERITED SETTERS FRUIT IN THIS APPLICATION
  */
 
 import java.util.Scanner;

@@ -1,5 +1,5 @@
 import greenfoot.*;
-
+import java.util.List;
 /**
  * A rock in space.
  * 
@@ -79,20 +79,25 @@ public class Asteroid extends SmoothMover
             
         }
     }
-    
+         
     /**
      * Break up this asteroid. If we are still big enough, this will create two
      * smaller asteroids. If we are small already, just disappear.
      */
     private void breakUp()     
     {
-        Greenfoot.playSound("Explosion.wav");
+        Greenfoot.playSound("Explosion.wav");       
        
-       
-        if (size <= 16) {            
-            ((Space)getWorld()).countScore(5); 
+        if (size <= 16) {  
+            Space space = (Space)getWorld();
+            space.countScore(5);           
+            List<Asteroid> asteroids = getWorld().getObjects(Asteroid.class);          
+            if (asteroids.size() < 2){
+                space.levelup();    
+            }            
             getWorld().removeObject(this);
         }
+        
         else {
             int r = getVelocity().getDirection() + Greenfoot.getRandomNumber(45);
             double l = getVelocity().getLength();
