@@ -8,6 +8,12 @@ import greenfoot.*;
  */
 public class Flower  extends Actor
 {
+    
+    private GreenfootSound mySong;
+    public Flower(){
+        mySong = new GreenfootSound("shrill254.mp3");
+    }
+    
     /**
      * Act - move to the right if clicked with the mouse.
      */
@@ -15,6 +21,12 @@ public class Flower  extends Actor
     {
         if (Greenfoot.mouseClicked(this)) {
             setLocation(getX() + 10, getY());
+            if(!mySong.isPlaying()){
+                mySong.play();
+            }
+            else{
+                mySong.pause();
+            }
         }
     }    
 }
