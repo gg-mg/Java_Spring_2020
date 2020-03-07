@@ -1,4 +1,4 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
  * Write a description of class MyWorld here.
@@ -9,6 +9,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class MyWorld extends World
 {
     private GreenfootSound eurySong = new GreenfootSound("EurythmicsSweetDreams.mp3");
+    private int level = 50;
+    Actor VolumeUp, VolumeDown;
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -18,9 +20,13 @@ public class MyWorld extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1); 
         
-        VolumeUpButton myButton= new VolumeUpButton();
-        addObject(myButton, 100,350);
-    }
+        PlayButton myButton= new PlayButton();
+        addObject(myButton, 150,300);
+        VolumeUp upButton= new VolumeUp();
+        addObject(upButton, 250,300);
+        VolumeDown downButton= new VolumeDown();
+        addObject(downButton, 50,300);
+    }    
     public GreenfootSound getEurySong()
     {
          return eurySong;
@@ -29,5 +35,22 @@ public class MyWorld extends World
     {
         this.eurySong = eurySong;
     }
-    
+    public int getLevel()
+    {
+         return level;
+    }
+    public void setLevel(int level)
+    {
+        this.level = level;
+    }
+    //public void act(){
+    //if (Greenfoot.mouseClicked(VolumeUp) && level < 100) adjustVolume(5);
+    //if (Greenfoot.mouseClicked(VolumeDown) && level > 0) adjustVolume(-5);
+    //}
+    public void adjustVolume(int adjustment){
+       level += adjustment;
+       eurySong.setVolume(level);
+    }
 }
+    
+
