@@ -33,7 +33,7 @@ public class MyWorld extends World
         addObject(mySeaHorse, 120,180);
         showName();
         score = 0;
-        time = 1300;
+        time = 2000;
         showScore();
         showCandy();
         showTime();

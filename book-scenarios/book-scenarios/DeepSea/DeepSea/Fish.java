@@ -48,7 +48,7 @@ public class Fish extends Actor
         public void act() 
     {
         setLocation(getX()+speed, getY());
-        turn(90);       
+        //turn(90);       
         
         if(getX()==779)
         {
